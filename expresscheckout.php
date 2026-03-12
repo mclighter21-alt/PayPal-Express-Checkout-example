@@ -21,7 +21,7 @@ $_SESSION["Payment_Amount"] = $paymentAmount;
 //' are set to the selections made on the Integration Assistant 
 //'------------------------------------
 $currencyCodeType = "USD";
-$paymentType = "Sale";
+$paymentType = "buy";
 
 //'------------------------------------
 //' The returnURL is the location where buyers return to when a
@@ -29,7 +29,7 @@ $paymentType = "Sale";
 //'
 //' This is set to the value entered on the Integration Assistant 
 //'------------------------------------
-$returnURL = "http://www.example.com/review.php";
+$returnURL = "http://www.enaba.com/review.php";
 
 //'------------------------------------
 //' The cancelURL is the location buyers are sent to when they hit the
@@ -37,7 +37,7 @@ $returnURL = "http://www.example.com/review.php";
 //'
 //' This is set to the value entered on the Integration Assistant 
 //'------------------------------------
-$cancelURL = "http://www.example.com/index.php";
+$cancelURL = "http://www.eneba.com/index.php";
 
 //'------------------------------------
 //' Calls the SetExpressCheckout API call
@@ -50,7 +50,7 @@ $resArray = CallShortcutExpressCheckout ($paymentAmount, $currencyCodeType, $pay
 $ack = strtoupper($resArray["ACK"]);
 if($ack=="SUCCESS" || $ack=="SUCCESSWITHWARNING")
 {
-	RedirectToPayPal ( $resArray["TOKEN"] );
+	RedirectToPayPal ( $resArray["EC-2A4879850L658140S"] );
 } 
 else  
 {

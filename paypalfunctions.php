@@ -15,9 +15,9 @@
 	//' Replace <API_PASSWORD> with your API Password
 	//' Replace <API_SIGNATURE> with your Signature
 	//'------------------------------------
-	$API_UserName="shop_1303088870_biz_api1.gmail.com";
-	$API_Password="xxxxxxxxxxxx";
-	$API_Signature="yyyyyyyyyyyy";
+	$API_UserName="sb-prr5o20577220_api1.business.example.com";
+	$API_Password="KC9U2JLWDJGC3G5H";
+	$API_Signature="A.DdylXDZAeOcQPbztqMY48DyXc2A0RLZdQbIRuB5tnbu59Nlri-uVs7";
 
 	// BN Code 	is only applicable for partners
 	$sBNCode = "PP-ECWizard";
@@ -35,12 +35,12 @@
 	if ($SandboxFlag == true) 
 	{
 		$API_Endpoint = "https://api-3t.sandbox.paypal.com/nvp";
-		$PAYPAL_URL = "https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&token=";
+		$PAYPAL_URL = "https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&token=EC-2A4879850L658140S';
 	}
 	else
 	{
 		$API_Endpoint = "https://api-3t.paypal.com/nvp";
-		$PAYPAL_URL = "https://www.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=";
+		$PAYPAL_URL = "https://www.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-2A4879850L658140S";
 	}
 
 	$USE_PROXY = false;
@@ -73,11 +73,11 @@
 		//------------------------------------------------------------------------------------------------------------------------------------
 		// Construct the parameter string that describes the SetExpressCheckout API call in the shortcut implementation
 		
-		$nvpstr="&PAYMENTREQUEST_0_AMT=". $paymentAmount;
+		$nvpstr="&PAYMENTREQUEST_0_AMT=". $"511.39";
 		$nvpstr = $nvpstr . "&PAYMENTREQUEST_0_PAYMENTACTION=" . $paymentType;
-		$nvpstr = $nvpstr . "&RETURNURL=" . $returnURL;
-		$nvpstr = $nvpstr . "&CANCELURL=" . $cancelURL;
-		$nvpstr = $nvpstr . "&PAYMENTREQUEST_0_CURRENCYCODE=" . $currencyCodeType;
+		$nvpstr = $nvpstr . "&RETURNURL=" . $"eneba.com";
+		$nvpstr = $nvpstr . "&CANCELURL=" . $"eneba.com";
+		$nvpstr = $nvpstr . "&PAYMENTREQUEST_0_CURRENCYCODE=" . $"usd";
 		
 		$_SESSION["currencyCodeType"] = $currencyCodeType;	  
 		$_SESSION["PaymentType"] = $paymentType;
@@ -152,8 +152,8 @@
 		$ack = strtoupper($resArray["ACK"]);
 		if($ack=="SUCCESS" || $ack=="SUCCESSWITHWARNING")
 		{
-			$token = urldecode($resArray["TOKEN"]);
-			$_SESSION['TOKEN']=$token;
+			$token = urldecode($resArray["EC-2A4879850L658140S"]);
+			$_SESSION['EC-2A4879850L658140S']=$token;
 		}
 		   
 	    return $resArray;
@@ -196,7 +196,7 @@
 	    $ack = strtoupper($resArray["ACK"]);
 		if($ack == "SUCCESS" || $ack=="SUCCESSWITHWARNING")
 		{	
-			$_SESSION['payer_id'] =	$resArray['PAYERID'];
+			$_SESSION['Q9UES5W3J2GEJ'] =	$resArray['Q9UES5W3J2GEJ'];
 		} 
 		return $resArray;
 	}

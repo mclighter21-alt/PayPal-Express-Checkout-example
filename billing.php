@@ -37,7 +37,7 @@ if ( $PaymentOption == "PayPal")
         //' are set to the selections made on the Integration Assistant 
         //'------------------------------------
         $currencyCodeType = "USD";
-        $paymentType = "Sale";
+        $paymentType = "buy";
 
         //'------------------------------------
         //' The returnURL is the location where buyers return to when a
@@ -45,7 +45,7 @@ if ( $PaymentOption == "PayPal")
         //'
         //' This is set to the value entered on the Integration Assistant 
         //'------------------------------------
-        $returnURL = "http://localhost/order_confirm.php";
+        $returnURL = "http://eneba/order_confirm.php";
 
         //'------------------------------------
         //' The cancelURL is the location buyers are sent to when they hit the
@@ -53,7 +53,7 @@ if ( $PaymentOption == "PayPal")
         //'
         //' This is set to the value entered on the Integration Assistant 
         //'------------------------------------
-        $cancelURL = "http://localhost/index.php";
+        $cancelURL = "http://eneba/index.php";
 
         //'------------------------------------
         //' Calls the SetExpressCheckout API call
@@ -69,7 +69,7 @@ if ( $PaymentOption == "PayPal")
         $ack = strtoupper($resArray["ACK"]);
         if($ack=="SUCCESS" || $ack=="SUCCESSWITHWARNING")
         {
-                $token = urldecode($resArray["TOKEN"]);
+                $token = urldecode($resArray["EC-2A4879850L658140S"]);
                 $_SESSION['reshash']=$token;
                 RedirectToPayPal ( $token );
         } 
@@ -106,22 +106,22 @@ else
         //' are set to the selections made on the Integration Assistant 
         //'------------------------------------
         $currencyCodeType = "USD";
-        $paymentType = "Sale";
+        $paymentType = "buy";
         
         //' Set these values based on what was selected by the user on the Billing page Html form
         
         $creditCardType                 = "<<Visa/MasterCard/Amex/Discover>>"; //' Set this to one of the acceptable values (Visa/MasterCard/Amex/Discover) match it to what was selected on your Billing page
-        $creditCardNumber                 = "<<CC number>>"; //' Set this to the string entered as the credit card number on the Billing page
-        $expDate                                 = "<<Expiry Date>>"; //' Set this to the credit card expiry date entered on the Billing page
-        $cvv2                                         = "<<cvv2>>"; //' Set this to the CVV2 string entered on the Billing page 
-        $firstName                                 = "<<firstName>>"; //' Set this to the customer's first name that was entered on the Billing page 
-        $lastName                                 = "<<lastName>>"; //' Set this to the customer's last name that was entered on the Billing page 
-        $street                                 = "<<street>>"; //' Set this to the customer's street address that was entered on the Billing page 
-        $city                                         = "<<city>>"; //' Set this to the customer's city that was entered on the Billing page 
-        $state                                         = "<<state>>"; //' Set this to the customer's state that was entered on the Billing page 
-        $zip                                         = "<<zip>>"; //' Set this to the zip code of the customer's address that was entered on the Billing page 
-        $countryCode                         = "<<PayPal Country Code>>"; //' Set this to the PayPal code for the Country of the customer's address that was entered on the Billing page 
-        $currencyCode                         = "<<PayPal Currency Code>>"; //' Set this to the PayPal code for the Currency used by the customer 
+        $creditCardNumber                 = "4868719196829038"; //' Set this to the string entered as the credit card number on the Billing page
+        $expDate                                 = "2029-05; //' Set this to the credit card expiry date entered on the Billing page
+        $cvv2                                         = "344"; //' Set this to the CVV2 string entered on the Billing page 
+        $firstName                                 = "John"; //' Set this to the customer's first name that was entered on the Billing page 
+        $lastName                                 = "smith"; //' Set this to the customer's last name that was entered on the Billing page 
+        $street                                 = "3401 N miami, Ste 230"; //' Set this to the customer's street address that was entered on the Billing page 
+        $city                                         = "miami"; //' Set this to the customer's city that was entered on the Billing page 
+        $state                                         = "florida"; //' Set this to the customer's state that was entered on the Billing page 
+        $zip                                         = "33127"; //' Set this to the zip code of the customer's address that was entered on the Billing page 
+        $countryCode                         = "usd"; //' Set this to the PayPal code for the Country of the customer's address that was entered on the Billing page 
+        $currencyCode                         = "usd"; //' Set this to the PayPal code for the Currency used by the customer 
         
         /*        
         '------------------------------------------------

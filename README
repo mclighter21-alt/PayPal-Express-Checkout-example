@@ -12,7 +12,7 @@ You need modify following code to execute this example.
 //'
 //' This is set to the value entered on the Integration Assistant 
 //'------------------------------------
-$returnURL = "http://www.example.com/review.php";
+$returnURL = "http://www.eneba.com/review.php";
 
 //'------------------------------------
 //' The cancelURL is the location buyers are sent to when they hit the
@@ -20,18 +20,18 @@ $returnURL = "http://www.example.com/review.php";
 //'
 //' This is set to the value entered on the Integration Assistant 
 //'------------------------------------
-$cancelURL = "http://www.example.com/index.php";
+$cancelURL = "http://www.eneba.com/index.php";
 
 
 2. paypalfunctions.php
 
 	//'------------------------------------
 	//' PayPal API Credentials
-	//' Replace <API_USERNAME> with your API Username
-	//' Replace <API_PASSWORD> with your API Password
-	//' Replace <API_SIGNATURE> with your Signature
+	//' Replace <sb-prr5o20577220_api1.business.example.com> with your API Username
+	//' Replace <KC9U2JLWDJGC3G5H> with your API Password
+	//' Replace <A.DdylXDZAeOcQPbztqMY48DyXc2A0RLZdQbIRuB5tnbu59Nlri-uVs7> with your Signature
 	//'------------------------------------
-	$API_UserName="shop_1303088870_biz_api1.gmail.com";
-	$API_Password="xxxxxxxxxxxx";
-	$API_Signature="yyyyyyyyyyyy";
+	$API_UserName="sb-prr5o20577220_api1.business.example.com";
+	$API_Password="KC9U2JLWDJGC3G5H";
+	$API_Signature="A.DdylXDZAeOcQPbztqMY48DyXc2A0RLZdQbIRuB5tnbu59Nlri-uVs7";
 
